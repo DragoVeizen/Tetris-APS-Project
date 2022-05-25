@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/drago/Tetris/build",
+  "command": "/usr/bin/c++  -I/home/drago/Tetris/Source/Headers -g -std=c++17 -o CMakeFiles/tetris.dir/Source/GetTetromino.cpp.o -c /home/drago/Tetris/Source/GetTetromino.cpp",
+  "file": "/home/drago/Tetris/Source/GetTetromino.cpp"
+},
+{
+  "directory": "/home/drago/Tetris/build",
+  "command": "/usr/bin/c++  -I/home/drago/Tetris/Source/Headers -g -std=c++17 -o CMakeFiles/tetris.dir/Source/GetWallKickData.cpp.o -c /home/drago/Tetris/Source/GetWallKickData.cpp",
+  "file": "/home/drago/Tetris/Source/GetWallKickData.cpp"
+},
+{
+  "directory": "/home/drago/Tetris/build",
+  "command": "/usr/bin/c++  -I/home/drago/Tetris/Source/Headers -g -std=c++17 -o CMakeFiles/tetris.dir/Source/Main.cpp.o -c /home/drago/Tetris/Source/Main.cpp",
+  "file": "/home/drago/Tetris/Source/Main.cpp"
+},
+{
+  "directory": "/home/drago/Tetris/build",
+  "command": "/usr/bin/c++  -I/home/drago/Tetris/Source/Headers -g -std=c++17 -o CMakeFiles/tetris.dir/Source/Tetromino.cpp.o -c /home/drago/Tetris/Source/Tetromino.cpp",
+  "file": "/home/drago/Tetris/Source/Tetromino.cpp"
+}
+]

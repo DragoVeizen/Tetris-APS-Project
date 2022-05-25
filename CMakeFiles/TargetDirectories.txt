@@ -1,0 +1,7 @@
+/home/drago/Tetris/CMakeFiles/tetris.dir
+/home/drago/Tetris/CMakeFiles/edit_cache.dir
+/home/drago/Tetris/CMakeFiles/rebuild_cache.dir
+/home/drago/Tetris/CMakeFiles/list_install_components.dir
+/home/drago/Tetris/CMakeFiles/install.dir
+/home/drago/Tetris/CMakeFiles/install/local.dir
+/home/drago/Tetris/CMakeFiles/install/strip.dir
