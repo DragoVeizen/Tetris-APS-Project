@@ -1,4 +1,5 @@
 # Tetris
 Classic Tetris game.
 
-I also made a video for this: https://youtu.be/vkS1fY_UTyg
+Made a Tetris emulator using C++ and SFML 
+while using CMAKE for meta-build and gnu make for main build.
