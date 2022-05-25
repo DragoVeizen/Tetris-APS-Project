@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/drago/Tetris/Source/GetTetromino.cpp" "CMakeFiles/tetris.dir/Source/GetTetromino.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/GetTetromino.cpp.o.d"
-  "/home/drago/Tetris/Source/GetWallKickData.cpp" "CMakeFiles/tetris.dir/Source/GetWallKickData.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/GetWallKickData.cpp.o.d"
-  "/home/drago/Tetris/Source/Main.cpp" "CMakeFiles/tetris.dir/Source/Main.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/Main.cpp.o.d"
-  "/home/drago/Tetris/Source/Tetromino.cpp" "CMakeFiles/tetris.dir/Source/Tetromino.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/Tetromino.cpp.o.d"
+  "/home/drago/Tetris_APS_Project/Source/GetTetromino.cpp" "CMakeFiles/tetris.dir/Source/GetTetromino.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/GetTetromino.cpp.o.d"
+  "/home/drago/Tetris_APS_Project/Source/GetWallKickData.cpp" "CMakeFiles/tetris.dir/Source/GetWallKickData.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/GetWallKickData.cpp.o.d"
+  "/home/drago/Tetris_APS_Project/Source/Main.cpp" "CMakeFiles/tetris.dir/Source/Main.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/Main.cpp.o.d"
+  "/home/drago/Tetris_APS_Project/Source/Tetromino.cpp" "CMakeFiles/tetris.dir/Source/Tetromino.cpp.o" "gcc" "CMakeFiles/tetris.dir/Source/Tetromino.cpp.o.d"
   )
 
 # Targets to which this target links.

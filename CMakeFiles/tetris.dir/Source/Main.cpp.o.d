@@ -1,7 +1,8 @@
 CMakeFiles/tetris.dir/Source/Main.cpp.o: \
- /home/drago/Tetris/Source/Main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/12.1.0/chrono /usr/include/c++/12.1.0/bits/chrono.h \
- /usr/include/c++/12.1.0/ratio /usr/include/c++/12.1.0/type_traits \
+ /home/drago/Tetris_APS_Project/Source/Main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/12.1.0/chrono \
+ /usr/include/c++/12.1.0/bits/chrono.h /usr/include/c++/12.1.0/ratio \
+ /usr/include/c++/12.1.0/type_traits \
  /usr/include/c++/12.1.0/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/12.1.0/x86_64-pc-linux-gnu/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -248,8 +249,7 @@ CMakeFiles/tetris.dir/Source/Main.cpp.o: \
  /usr/include/SFML/Graphics/Sprite.hpp \
  /usr/include/SFML/Graphics/Text.hpp \
  /usr/include/SFML/Graphics/VertexBuffer.hpp \
- /home/drago/Tetris/Source/Headers/DrawText.hpp \
- /home/drago/Tetris/Source/Headers/Global.hpp \
- /home/drago/Tetris/Source/Headers/GetTetromino.hpp \
- /home/drago/Tetris/Source/Headers/GetWallKickData.hpp \
- /home/drago/Tetris/Source/Headers/Tetromino.hpp
+ /home/drago/Tetris_APS_Project/Source/Headers/Global.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/GetTetromino.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/GetWallKickData.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/Tetromino.hpp

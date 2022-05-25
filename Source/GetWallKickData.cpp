@@ -2,21 +2,17 @@
 using namespace std;
 #include "Headers/Global.hpp"
 #include "Headers/GetWallKickData.hpp"
-
-vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_rotation, unsigned char i_next_rotation)
+vector<Position> get_wall_kick_data(bool ishapecheck, unsigned char currentrotation, unsigned char nextrotation)
 {
 	//We return the wall kick data based on the current and next rotations. We also check whether the shape is I or not
-	//Fun fact, the website that provided the data had the y-coordinate flipped so I had to flip every y's sign
-	//I have NO idea why did they even do this
-
-	if (i_is_i_shape==0)
+	if (ishapecheck==0)
 	{
-		switch (i_current_rotation)
+		switch (currentrotation)
 		{
 			case 0:
 			case 2:
 			{
-				switch (i_next_rotation)
+				switch (nextrotation)
 				{
 					case 1:
 					{
@@ -37,16 +33,15 @@ vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_r
 				return {{0, 0}, {-1, 0}, {-1, 1}, {0, -2}, {-1, -2}};
 			}
 		}
-
 		return {{0, 0}};
 	}
 	else
 	{
-		switch (i_current_rotation)
+		switch (currentrotation)
 		{
 			case 0:
 			{
-				switch (i_next_rotation)
+				switch (nextrotation)
 				{
 					case 1:
 					{
@@ -60,7 +55,7 @@ vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_r
 			}
 			case 1:
 			{
-				switch (i_next_rotation)
+				switch (nextrotation)
 				{
 					case 0:
 					{
@@ -74,7 +69,7 @@ vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_r
 			}
 			case 2:
 			{
-				switch (i_next_rotation)
+				switch (nextrotation)
 				{
 					case 1:
 					{
@@ -88,7 +83,7 @@ vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_r
 			}
 			case 3:
 			{
-				switch (i_next_rotation)
+				switch (nextrotation)
 				{
 					case 0:
 					{
@@ -101,7 +96,6 @@ vector<Position> get_wall_kick_data(bool i_is_i_shape, unsigned char i_current_r
 				}
 			}
 		}
-
 		return {{0, 0}};
 	}
 }

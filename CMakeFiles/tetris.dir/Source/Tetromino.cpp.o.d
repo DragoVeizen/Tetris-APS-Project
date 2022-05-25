@@ -1,6 +1,6 @@
 CMakeFiles/tetris.dir/Source/Tetromino.cpp.o: \
- /home/drago/Tetris/Source/Tetromino.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/12.1.0/vector \
+ /home/drago/Tetris_APS_Project/Source/Tetromino.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/12.1.0/vector \
  /usr/include/c++/12.1.0/bits/stl_algobase.h \
  /usr/include/c++/12.1.0/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/12.1.0/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -46,7 +46,7 @@ CMakeFiles/tetris.dir/Source/Tetromino.cpp.o: \
  /usr/include/c++/12.1.0/backward/binders.h \
  /usr/include/c++/12.1.0/bits/range_access.h \
  /usr/include/c++/12.1.0/bits/vector.tcc \
- /home/drago/Tetris/Source/Headers/Global.hpp \
- /home/drago/Tetris/Source/Headers/GetTetromino.hpp \
- /home/drago/Tetris/Source/Headers/GetWallKickData.hpp \
- /home/drago/Tetris/Source/Headers/Tetromino.hpp
+ /home/drago/Tetris_APS_Project/Source/Headers/Global.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/GetTetromino.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/GetWallKickData.hpp \
+ /home/drago/Tetris_APS_Project/Source/Headers/Tetromino.hpp

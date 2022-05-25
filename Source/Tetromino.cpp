@@ -4,131 +4,103 @@ using namespace std;
 #include "Headers/GetTetromino.hpp"
 #include "Headers/GetWallKickData.hpp"
 #include "Headers/Tetromino.hpp"
-
-Tetromino::Tetromino(unsigned char i_shape, const vector<vector<unsigned char>> &i_matrix) : rotation(0),
-																							 shape(i_shape),
-																							 minos(get_tetromino(i_shape, COLUMNS / 2, 1))
+Tetromino::Tetromino(unsigned char ishape, const vector<vector<unsigned char>> &imatrix) : rotation(0),
+																							 shape(ishape),
+																							 minos(get_tetromino(ishape, COLUMNS / 2, 1))
 {
 }
-
-bool Tetromino::move_down(const vector<vector<unsigned char>> &i_matrix)
+bool Tetromino::move_down(const vector<vector<unsigned char>> &imatrix)
 {
 	for (Position &mino : minos)
 	{
-
 		if (ROWS == 1 + mino.y)
 		{
 			return 0;
 		}
-
-		if (0 < i_matrix[mino.x][1 + mino.y])
+		if (0 < imatrix[mino.x][1 + mino.y])
 		{
 			return 0;
 		}
 	}
-
 	for (Position &mino : minos)
 	{
 		mino.y++;
 	}
-
 	return 1;
 }
-
-bool Tetromino::reset(unsigned char i_shape, const vector<vector<unsigned char>> &i_matrix)
+bool Tetromino::reset(unsigned char ishape, const vector<vector<unsigned char>> &imatrix)
 {
-
 	rotation = 0;
-	shape = i_shape;
-
+	shape = ishape;
 	minos = get_tetromino(shape, COLUMNS / 2, 1);
-
 	for (Position &mino : minos)
 	{
-		if (0 < i_matrix[mino.x][mino.y])
+		if (0 < imatrix[mino.x][mino.y])
 		{
-
 			return 0;
 		}
 	}
-
 	return 1;
 }
-
 unsigned char Tetromino::get_shape()
 {
-
 	return shape;
 }
-
-void Tetromino::hard_drop(const vector<vector<unsigned char>> &i_matrix)
+void Tetromino::hard_drop(const vector<vector<unsigned char>> &imatrix)
 {
-
-	minos = get_ghost_minos(i_matrix);
+	minos = get_ghost_minos(imatrix);
 }
-
-void Tetromino::move_left(const vector<vector<unsigned char>> &i_matrix)
+void Tetromino::move_left(const vector<vector<unsigned char>> &imatrix)
 {
-
 	for (Position &mino : minos)
 	{
 		if (0 > mino.x - 1)
 		{
 			return;
 		}
-
 		if (0 > mino.y)
 		{
 			continue;
 		}
-		else if (0 < i_matrix[mino.x - 1][mino.y])
+		else if (0 < imatrix[mino.x - 1][mino.y])
 		{
 			return;
 		}
 	}
-
 	for (Position &mino : minos)
 	{
 		mino.x--;
 	}
 }
-
-void Tetromino::move_right(const vector<vector<unsigned char>> &i_matrix)
+void Tetromino::move_right(const vector<vector<unsigned char>> &imatrix)
 {
-
 	for (Position &mino : minos)
 	{
 		if (COLUMNS == 1 + mino.x)
 		{
 			return;
 		}
-
 		if (0 > mino.y)
 		{
 			continue;
 		}
-		else if (0 < i_matrix[1 + mino.x][mino.y])
+		else if (0 < imatrix[1 + mino.x][mino.y])
 		{
 			return;
 		}
 	}
-
 	for (Position &mino : minos)
 	{
 		mino.x++;
 	}
 }
-
-void Tetromino::rotate(bool i_clockwise, const vector<vector<unsigned char>> &i_matrix)
+void Tetromino::rotate(bool iclockwise, const vector<vector<unsigned char>> &imatrix)
 {
-
 	if ( shape !=3)//checking if the shape is o shaped in which case no rotation
 	{
 		unsigned char next_rotation;
-
 		vector<Position> current_minos = minos;
-
-		if (i_clockwise==0)
+		if (iclockwise==0)
 		{
 			next_rotation = (3 + rotation) % 4;
 		}
@@ -136,31 +108,25 @@ void Tetromino::rotate(bool i_clockwise, const vector<vector<unsigned char>> &i_
 		{
 			next_rotation = (1 + rotation) % 4;
 		}
-
 		if (0 == shape)
 		{
-
 			float center_x = 0.5f * (minos[1].x + minos[2].x);
 			float center_y = 0.5f * (minos[1].y + minos[2].y);
-
 			switch (rotation)
 			{
 			case 0:
 			{
 				center_y += 0.5f;
-
 				break;
 			}
 			case 1:
 			{
 				center_x -= 0.5f;
-
 				break;
 			}
 			case 2:
 			{
 				center_y -= 0.5f;
-
 				break;
 			}
 			case 3:
@@ -168,14 +134,11 @@ void Tetromino::rotate(bool i_clockwise, const vector<vector<unsigned char>> &i_
 				center_x += 0.5f;
 			}
 			}
-
 			for (Position &mino : minos)
 			{
-
 				float x = mino.x - center_x;
 				float y = mino.y - center_y;
-
-				if (0 == i_clockwise)
+				if (0 == iclockwise)
 				{
 					mino.x = static_cast<char>(center_x + y);
 					mino.y = static_cast<char>(center_y - x);
@@ -189,14 +152,11 @@ void Tetromino::rotate(bool i_clockwise, const vector<vector<unsigned char>> &i_
 		}
 		else
 		{
-
 			for (unsigned char a = 1; a < minos.size(); a++)
 			{
-
 				char x = minos[a].x - minos[0].x;
 				char y = minos[a].y - minos[0].y;
-
-				if (0 == i_clockwise)
+				if (0 == iclockwise)
 				{
 					minos[a].x = y + minos[0].x;
 					minos[a].y = minos[0].y - x;
@@ -208,111 +168,84 @@ void Tetromino::rotate(bool i_clockwise, const vector<vector<unsigned char>> &i_
 				}
 			}
 		}
-
 		for (Position &wall_kick : get_wall_kick_data(0 == shape, rotation, next_rotation))
 		{
 			bool can_turn = 1;
-
 			for (Position &mino : minos)
 			{
-
 				if (0 > mino.x + wall_kick.x || COLUMNS <= mino.x + wall_kick.x || ROWS <= mino.y + wall_kick.y)
 				{
 					can_turn = 0;
-
 					break;
 				}
-
 				if (0 > mino.y + wall_kick.y)
 				{
 					continue;
 				}
-				else if (0 < i_matrix[mino.x + wall_kick.x][mino.y + wall_kick.y])
+				else if (0 < imatrix[mino.x + wall_kick.x][mino.y + wall_kick.y])
 				{
 					can_turn = 0;
-
 					break;
 				}
 			}
-
 			if (can_turn==1)
 			{
-
 				rotation = next_rotation;
-
 				for (Position &mino : minos)
 				{
 					mino.x += wall_kick.x;
 					mino.y += wall_kick.y;
 				}
-
 				return;
 			}
 		}
-
 		minos = current_minos;
 	}
 }
-
-void Tetromino::update_matrix(vector<vector<unsigned char>> &i_matrix)
+void Tetromino::update_matrix(vector<vector<unsigned char>> &imatrix)
 {
-
 	for (Position &mino : minos)
 	{
 		if (0 > mino.y)
 		{
 			continue;
 		}
-
-		i_matrix[mino.x][mino.y] = 1 + shape;
+		imatrix[mino.x][mino.y] = 1 + shape;
 	}
 }
-
-vector<Position> Tetromino::get_ghost_minos(const vector<vector<unsigned char>> &i_matrix)
+vector<Position> Tetromino::get_ghost_minos(const vector<vector<unsigned char>> &imatrix)
 {
-
 	bool keep_falling = 1;
-
 	unsigned char total_movement = 0;
-
 	vector<Position> ghost_minos = minos;
-
 	while (1 == keep_falling)
 	{
 		total_movement++;
-
 		for (Position &mino : minos)
 		{
 			if (ROWS == total_movement + mino.y)
 			{
 				keep_falling = 0;
-
 				break;
 			}
-
 			if (0 > total_movement + mino.y)
 			{
 				continue;
 			}
-			else if (0 < i_matrix[mino.x][total_movement + mino.y])
+			else if (0 < imatrix[mino.x][total_movement + mino.y])
 			{
 				keep_falling = 0;
-
 				break;
 			}
 		}
 	}
-
 	for (Position &mino : ghost_minos)
 	{
 		mino.y += total_movement - 1;
 	}
-
 	return ghost_minos;
 }
-
 vector<Position> Tetromino::get_minos()
 {
-
 	return minos;
 }

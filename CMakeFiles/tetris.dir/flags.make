@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/drago/Tetris/Source/Headers
+CXX_INCLUDES = -I/home/drago/Tetris_APS_Project/Source/Headers
 
 CXX_FLAGS = -std=c++17
 
